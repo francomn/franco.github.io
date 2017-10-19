@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <!-- SCRIPT PAGAR.ME -->
+        <script src="https://assets.pagar.me/checkout/checkout.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="pay-button">Abrir modal de pagamento</button>
+
+        <script>
+            $(document).ready(function() {
+                var button = $('#pay-button');
+
+                button.click(function() {
+
+                    // INICIAR A INSTÂNCIA DO CHECKOUT
+                    // declarando um callback de sucesso
+                    var checkout = new PagarMeCheckout.Checkout({"encryption_key":"ek_test_X26XJtkrVowzrmv3ltFipJorE5aH7h", success: function(data) {
+                        console.log(data);
+                        //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
+                    }});
+
+                    // DEFINIR AS OPÇÕES
+                    // e abrir o modal
+                    // É necessário passar os valores boolean em "var params" como string
