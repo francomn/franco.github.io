@@ -23,3 +23,23 @@
                     // DEFINIR AS OPÇÕES
                     // e abrir o modal
                     // É necessário passar os valores boolean em "var params" como string
+                    var params = {
+                      "amount":1000,
+                      "buttonText":"Pagar",
+                      "customerData":true,
+                      "paymentMethods":"boleto,credit_card",
+                      "maxInstallments":12,
+                      "uiColor":"#bababa",
+                      "postbackUrl":"requestb.in/1234",
+                      "createToken":true,
+                      "interestRate":12,
+                      "freeInstallments":3,
+                      "defaultInstallment":5,
+                      "headerText":"Título"
+                    };
+                    checkout.open(params);
+                });
+            });
+        </script>
+    </body>
+</html>
